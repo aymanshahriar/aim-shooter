@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.0" viewBox="0 0 145.27 145.28" xmlns="http://www.w3.org/2000/svg" xmlnsCc="http://creativecommons.org/ns#" xmlnsDc="http://purl.org/dc/elements/1.1/" xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<ellipse cx="72.636" cy="72.638" rx="72.636" ry="72.638"/>
+<ellipse transform="scale(-1)" cx="-72.685" cy="-72.639" rx="59.35" ry="59.351" fill="#fff"/>
+<ellipse cx="72.666" cy="72.293" rx="48.701" ry="49.065"/>
+<ellipse cx="72.681" cy="72.639" rx="35.433" ry="35.433" fill="#fff"/>
+<ellipse cx="72.687" cy="72.637" rx="27.461" ry="27.461"/>
+<rect x="8.4578" y="69.98" width="131.99" height="5.315"/>
+<rect transform="rotate(-90)" x="-136.86" y="70.022" width="131.99" height="5.315"/>
+<ellipse cx="72.68" cy="72.638" rx="14.173" ry="14.173" fill="#fff"/>
+<ellipse cx="72.684" cy="72.639" rx="11.516" ry="11.516" fill="#f00" fill-rule="evenodd"/>
+<metadata>
+<rdfRDF>
+<ccWork>
+<dcFormat>image/svg+xml</dcFormat>
+<dcType rdfResource="http://purl.org/dc/dcmitype/StillImage"/>
+<ccLicense rdfResource="http://creativecommons.org/publicdomain/zero/1.0/"/>
+<dcPublisher>
+<ccAgent rdfAbout="http://openclipart.org/">
+<dcTitle>Openclipart</dcTitle>
+</ccAgent>
+</dcPublisher>
+<dcTitle/>
+<dcDate>2007-02-16T12:18:27</dcDate>
+<dcDescription/>
+<dcSource>https://openclipart.org/detail/3255/zielscheibe-target-aim-by-urwald</dcSource>
+<dcCreator>
+<ccAgent>
+<dcTitle>urwald</dcTitle>
+</ccAgent>
+</dcCreator>
+</ccWork>
+<ccLicense rdfAbout="http://creativecommons.org/publicdomain/zero/1.0/">
+<ccPermits rdfResource="http://creativecommons.org/ns#Reproduction"/>
+<ccPermits rdfResource="http://creativecommons.org/ns#Distribution"/>
+<ccPermits rdfResource="http://creativecommons.org/ns#DerivativeWorks"/>
+</ccLicense>
+</rdfRDF>
+</metadata>
+</svg>

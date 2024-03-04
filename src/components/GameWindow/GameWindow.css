@@ -1,0 +1,29 @@
+.GameWindow {
+    padding: 0;   /*It's okay not to specify a unit if the value is zero*/
+    border: 3px solid black;
+    height: 630px;
+    width: 900px;
+    position: absolute;
+    cursor: crosshair; 
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.target {
+    position: relative;
+    border-radius: '50%';       /*  Even though the target image is circular in shape, it's border is square, which means that by default clicking the corner outside of the circle will
+                                    add to the score. So setting the borderRadius to 50% makes the border circular and fixes the issue.*/                               
+    width: 70px;
+    height: 70px;
+    display: block;
+    
+    /* top: 0;
+    left: 0;  */
+    
+    
+
+
+}

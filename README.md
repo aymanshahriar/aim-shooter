@@ -1,3 +1,9 @@
+# Reminders to myself:
+- This app entirely consists of the frontend, it does not have a backend (sever/api or database)
+- The IDE that I used was VS Code
+- To start a server that serves the frontend, run `npm start`.
+- Technologies used for the frontend: Javascript, React, Tachyons
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
