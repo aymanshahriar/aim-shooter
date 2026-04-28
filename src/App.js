@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import './App.css';
 import 'tachyons'
-import GameWindow from './components/GameWindow/GameWindow.js';
+import Game from './components/Game.js';
+import Result from './components/Result.js';
+import Welcome from './components/Welcome.js';
 
 function App() {
-  const [route, setRoute] = useState('welcomeScreen');
+  const navigate = useNavigate();
   const [score, setScore] = useState(0);
   const [targetsHit, setTargetsHit] = useState(0);
   const [avgAccuracy, setAvgAccuracy] = useState(0);
   
   useEffect(() => {
-    if (targetsHit === 20) setRoute('endScreen');
-  }, [targetsHit])
+    if (targetsHit === 20) navigate('/result');
+  }, [targetsHit, navigate])
 
-  const updateScoreAndTargetsHitAndAvgAccuracy = (accuracy) => {
+  const updateStats = (accuracy) => {
     setScore(previousScore => previousScore + accuracy)
     updateAvgAccuracy(accuracy, targetsHit+1)
     setTargetsHit(previousCount => previousCount + 1);
@@ -27,40 +30,17 @@ function App() {
   const resetGame = () => {
     setScore(0)
     setTargetsHit(0)
-    setRoute('welcomeScreen')
+    setAvgAccuracy(0)
   }
 
   return (
     <div className="App">
-      {route === 'welcomeScreen' ?
-        <div>
-          <h1>Aim Shooter Game</h1>
-          <a className="f6 link dim ph3 pv2 mb2 dib white bg-dark-green" href="#0" 
-            onClick={() => setRoute("gameScreen")}>
-            Click To Play Game
-          </a>
-
-        </div>
-        :
-        (route === "gameScreen" ?
-          <div>
-            <h1>
-              <span className='ph5'>Score: {score}</span> 
-              <span className='ph5'>Accuracy Average: {avgAccuracy}%</span> 
-            </h1>
-            <GameWindow updateScoreAndTargetsHitAndAvgAccuracy={updateScoreAndTargetsHitAndAvgAccuracy}/>
-          </div>
-          :
-          <div>
-            <h1>Your score is: {score}</h1>
-            <h1>Your average accuracy is: {avgAccuracy}%</h1>
-            <a className="f6 link dim ph3 pv2 mb2 dib white bg-dark-green" href="#0"
-              onClick={() => resetGame()}>
-              Play Again
-            </a>
-          </div>
-        )
-      }
+      <Routes>
+        <Route path='/' element={<Welcome resetGame={resetGame} />} />
+        <Route path='/game' element={<Game score={score} avgAccuracy={avgAccuracy} updateStats={updateStats}/>} />
+        <Route path='/result' element={<Result score={score} avgAccuracy={avgAccuracy} resetGame={resetGame} />} />
+        <Route path='*' element={<Navigate to='/' replace />} />
+      </Routes>
     </div>
   );
 }

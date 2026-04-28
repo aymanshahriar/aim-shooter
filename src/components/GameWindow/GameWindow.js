@@ -15,7 +15,7 @@ function getRandomInt(maxInclusive) {
 // For some reason, adding the center class to the inner div will not center the GameWindow component. Instead, we need to create an outer div and add the center class to it
 // By default, even though the target image is circular in shape, it's border is square, which means that by default clicking the corner outside of the circle will
 // add to the score. So setting the borderRadius to 50% makes the border circular and fixes the issue.
-function GameWindow({updateScoreAndTargetsHitAndAvgAccuracy}) {
+function GameWindow({updateStats}) {
   const [xPositionInPx, setXPositionInPx] = useState(getRandomInt(gameWindowWidthInPx-targetSizeInPx));
   const [yPositionInPx, setYPositionInPx] = useState(getRandomInt(gameWindowHeightInPx-targetSizeInPx));
 
@@ -43,7 +43,7 @@ function GameWindow({updateScoreAndTargetsHitAndAvgAccuracy}) {
           alt='target'
           onClick={(event) => {
             const accuracy = calculateAccuracy(event)
-            updateScoreAndTargetsHitAndAvgAccuracy(accuracy)
+            updateStats(accuracy)
             changeTargetLocation()
           }}
           style = {{left: `${xPositionInPx}px`, top: `${yPositionInPx}px`}}
